@@ -1,4 +1,4 @@
-import { MetadataRoute } from "next";
+import type { MetadataRoute } from "next";
 
 const BASE = "https://www.hostelplate.live";
 
@@ -8,10 +8,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/static/"],
+        disallow: ["/api/", "/static/"],
       },
       {
-        // Block AI training crawlers
+        // Block selected AI training crawlers
         userAgent: [
           "GPTBot",
           "ChatGPT-User",
@@ -27,6 +27,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
   };
 }
