@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^hostelplate\.live$ [NC]
+RewriteRule ^(.*)$ https://www.hostelplate.live/$1 [R=301,L]
+DirectoryIndex index.html
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType image/png "access plus 1 month"
+ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
